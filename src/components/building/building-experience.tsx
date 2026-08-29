@@ -4,6 +4,7 @@ import { ArrowUpRightIcon, BedDoubleIcon, Building2Icon, CompassIcon, EyeIcon, M
 import type { FacadeView } from "@/components/building/building-canvas"
 import { FloorPlan } from "@/components/building/floor-plan"
 import { BidTerminal } from "@/components/market/bid-terminal"
+import { OwnerCard, UnclaimedOwnerCard } from "@/components/ownership/owner-card"
 import { Badge } from "@/components/ui/badge"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { BorderBeam } from "@/components/ui/border-beam"
@@ -11,8 +12,10 @@ import { Button } from "@/components/ui/button"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { Separator } from "@/components/ui/separator"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { ownershipId } from "@/data/ownership"
 import { filterResidences, getResidence, type ResidenceStatus } from "@/data/residences"
 import { getTower, towers } from "@/data/towers"
+import { useOwnerships } from "@/hooks/use-ownerships"
 import { getCheckoutUrl, isSandboxCheckout } from "@/lib/checkout"
 
 const BuildingCanvas = lazy(() => import("@/components/building/building-canvas"))
@@ -37,6 +40,7 @@ function CanvasLoadingState() {
 }
 
 export default function BuildingExperience() {
+  const { data: ownerships } = useOwnerships()
   const [towerId, setTowerId] = useState(towers[0].id)
   const [selectedId, setSelectedId] = useState("4B")
   const [bedsFilter, setBedsFilter] = useState<BedsFilter>("all")
@@ -49,6 +53,7 @@ export default function BuildingExperience() {
     [bedsFilter, tower.residences],
   )
   const visibleIds = useMemo(() => new Set(visibleResidences.map((residence) => residence.id)), [visibleResidences])
+  const selectedOwner = ownerships.find((owner) => owner.id === ownershipId(tower.id, selectedResidence.unit))
 
   const chooseTower = (nextTowerId: string) => {
     const nextTower = getTower(nextTowerId)
@@ -145,7 +150,7 @@ export default function BuildingExperience() {
 
             <div className="tower-stage__canvas">
               <Suspense fallback={<CanvasLoadingState />}>
-                <BuildingCanvas tower={tower} facadeView={facadeView} selectedId={selectedId} visibleIds={visibleIds} onSelect={setSelectedId} />
+                <BuildingCanvas tower={tower} facadeView={facadeView} selectedId={selectedId} visibleIds={visibleIds} ownerships={ownerships} onSelect={setSelectedId} />
               </Suspense>
             </div>
 
@@ -158,11 +163,13 @@ export default function BuildingExperience() {
             <div className="residence-rail" aria-label="Choose a residence">
               {tower.residences.map((residence) => {
                 const isVisible = visibleIds.has(residence.id)
+                const owner = ownerships.find((candidate) => candidate.id === ownershipId(tower.id, residence.unit))
                 return (
                   <button
                     aria-label={`Residence ${residence.unit}, ${residence.beds} bedroom, ${statusCopy[residence.status]}`}
                     aria-pressed={selectedId === residence.id}
                     className="residence-chip"
+                    data-owned={Boolean(owner)}
                     data-visible={isVisible}
                     disabled={!isVisible}
                     key={residence.id}
@@ -171,6 +178,7 @@ export default function BuildingExperience() {
                   >
                     <span>{residence.unit}</span>
                     <small>{residence.beds} BR</small>
+                    {owner ? <i aria-hidden="true" style={{ background: owner.brandColor }} /> : null}
                   </button>
                 )
               })}
@@ -194,6 +202,8 @@ export default function BuildingExperience() {
 
             <p className="residence-detail__summary">{selectedResidence.summary}</p>
 
+            {selectedOwner ? <OwnerCard ownership={selectedOwner} /> : <UnclaimedOwnerCard />}
+
             <div className="residence-specs">
               <div><BedDoubleIcon aria-hidden="true" /><span>{selectedResidence.beds} bed · {selectedResidence.baths} bath</span></div>
               <div><RulerIcon aria-hidden="true" /><span>{selectedResidence.area} m² internal</span></div>
@@ -205,13 +215,13 @@ export default function BuildingExperience() {
             <Separator />
 
             <div className="checkout-cta">
-              <div><p>Digital buyer pack</p><span>Plans, finishes + project notes</span></div>
+              <div><p>Buyer pack + brand claim</p><span>Plans, finishes + one logo residence</span></div>
               <strong>$29</strong>
             </div>
 
             <Button asChild className="w-full" size="lg">
-              <a href={getCheckoutUrl(selectedResidence.id)} rel="noreferrer" target="_blank">
-                Get the buyer pack <ArrowUpRightIcon data-icon="inline-end" />
+              <a href={getCheckoutUrl(`${tower.id}-${selectedResidence.unit}`)} rel="noreferrer" target="_blank">
+                Get the pack + claim <ArrowUpRightIcon data-icon="inline-end" />
               </a>
             </Button>
 

@@ -1,11 +1,12 @@
 # Syndiqo Towers
 
-Syndiqo Towers is an interactive 3D apartment marketplace published by Syndiqo. It lets visitors switch among four procedural WebGL towers, inspect three façades on each building, and compare 48 illustrative residences by price, floor, bedrooms, area, orientation, view, floor plan, and release status.
+Syndiqo Towers is an interactive 3D apartment marketplace published by Syndiqo. It lets visitors switch among four procedural WebGL towers, explore planted grounds with people and a dog walker, inspect three façades on each building, and compare 48 illustrative residences by price, floor, bedrooms, area, orientation, view, floor plan, and release status.
 
 ## Canonical URLs
 
 - Experience: https://tower.syndiqo.ma/
 - Syndiqo: https://syndiqo.ma/
+- HOET Technologies: https://hoet.ma/
 
 ## Important facts
 
@@ -13,5 +14,8 @@ Syndiqo Towers is an interactive 3D apartment marketplace published by Syndiqo. 
 - The real-time models are rendered with Three.js and React Three Fiber; they are not videos.
 - Apartment prices are displayed in Moroccan dirhams and change with the selected tower.
 - The read-only bid terminal never submits a property order.
-- A separate $29 digital buyer pack is sold through a secure Polar checkout.
+- A separate $29 digital buyer pack and one-apartment brand claim is sold through a secure Polar checkout.
+- A successful buyer can claim one available demo residence with an organization name, website, brand color, and logo.
+- Customer logos are kept in a private Cloudflare R2 bucket and served through the application.
+- Syndiqo owns the Atlas Court 4B showcase residence and HOET Technologies owns Marina Fold 5A.
 - Buying the digital pack does not sell or reserve real property.

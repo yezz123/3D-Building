@@ -12,7 +12,7 @@
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta
       name="keywords"
-      content="3D apartment buildings Morocco, interactive apartment marketplace, Casablanca apartments, Rabat apartments, apartment floor plans, property visualization, real estate 3D, residential towers, apartment prices MAD, property bid terminal, Syndiqo Morocco"
+      content="3D apartment buildings Morocco, interactive apartment marketplace, branded digital apartment, apartment logo claim, Casablanca apartments, Rabat apartments, apartment floor plans, property visualization, real estate 3D, residential towers, apartment prices MAD, property bid terminal, Syndiqo Morocco, HOET Technologies"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/brand-icon-512.png" />
@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://tower.syndiqo.ma/" />
     <meta
       name="description"
-      content="Explore four Syndiqo towers in interactive 3D. Compare apartment prices, three designed façades, floor plans, views, and illustrative bid activity."
+      content="Explore four colorful Syndiqo towers in interactive 3D, walk through their gardens, compare 48 apartments, and claim a branded digital residence after checkout."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Syndiqo Tower" />
@@ -29,7 +29,7 @@
     <meta property="og:title" content="Syndiqo Towers | Interactive 3D Apartment Marketplace" />
     <meta
       property="og:description"
-      content="Choose four residential towers, inspect three façades each, and compare illustrative apartment prices, plans, views, and bid activity."
+      content="Choose four residential towers, explore planted grounds and three façades each, compare prices and plans, then claim a branded digital residence."
     />
     <meta property="og:image" content="https://tower.syndiqo.ma/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -39,7 +39,7 @@
     <meta name="twitter:title" content="Syndiqo Towers | Interactive 3D Apartment Marketplace" />
     <meta
       name="twitter:description"
-      content="Explore four interactive 3D towers with apartment prices, floor plans, three façades, and illustrative bids."
+      content="Explore four interactive 3D towers with gardens, people, pets, apartment prices, floor plans, three façades, and branded digital residences."
     />
     <meta name="twitter:image" content="https://tower.syndiqo.ma/og-image.png" />
     <script type="application/ld+json">
@@ -72,7 +72,7 @@
             "@id": "https://tower.syndiqo.ma/#webpage",
             "url": "https://tower.syndiqo.ma/",
             "name": "Interactive 3D Apartment Tower Marketplace | Syndiqo",
-            "description": "An interactive marketplace with four procedural 3D residential towers, three designed façades each, apartment floor plans, prices and illustrative bid activity.",
+            "description": "An interactive marketplace with four colorful procedural 3D residential towers, planted grounds, people and pets, three designed façades each, apartment floor plans, prices, illustrative bid activity, and branded digital residences.",
             "isPartOf": { "@id": "https://tower.syndiqo.ma/#website" },
             "about": { "@id": "https://tower.syndiqo.ma/#experience" },
             "primaryImageOfPage": { "@id": "https://tower.syndiqo.ma/#primaryimage" },
@@ -106,7 +106,15 @@
             "applicationCategory": "MultimediaApplication",
             "operatingSystem": "Any modern web browser",
             "browserRequirements": "JavaScript and WebGL support",
-            "description": "A real-time Three.js tower marketplace for comparing architecture, façades, apartment plans, prices, views and illustrative bid activity.",
+            "description": "A real-time Three.js tower marketplace for comparing architecture, façades, apartment plans, prices, views and illustrative bid activity, with gardens and owner logos on claimed digital residences.",
+            "featureList": [
+              "Four procedural Three.js residential towers",
+              "Three designed façades per tower",
+              "48 interactive apartment plans",
+              "Illustrative live bid terminal",
+              "Private logo upload for paid brand claims",
+              "Colorful planted grounds with people and pets"
+            ],
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -117,9 +125,12 @@
           {
             "@type": "Product",
             "@id": "https://tower.syndiqo.ma/#buyer-pack",
-            "name": "Syndiqo Towers Buyer Pack",
-            "description": "A digital buyer pack with illustrative floor plans, finish notes and project information for the Syndiqo 3D tower experience.",
-            "image": "https://tower.syndiqo.ma/og-image.png",
+            "name": "Syndiqo Towers Buyer Pack + Brand Claim",
+            "description": "A one-time digital buyer pack with 48 illustrative floor plans, finish and price context, plus one verified organization logo claim on an available demo residence.",
+            "image": [
+              "https://tower.syndiqo.ma/product-cover.png",
+              "https://tower.syndiqo.ma/product-brand-claim.jpg"
+            ],
             "brand": { "@id": "https://syndiqo.ma/#organization" },
             "category": "Digital property buyer pack",
             "offers": {
@@ -163,7 +174,15 @@
                 "name": "What is included in the digital buyer pack?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The one-time digital buyer pack includes illustrative apartment floor plans, finish notes and project information. Buying the pack does not sell or reserve real property."
+                  "text": "The one-time digital buyer pack includes illustrative apartment floor plans, finish notes, project information and one organization logo claim on an available demo residence. Buying the pack does not sell or reserve real property."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does an apartment brand claim work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "After Polar confirms a successful checkout, the buyer can choose one unclaimed demo residence and add an organization name, website, brand color and PNG, JPG or WebP logo. The private logo is served through the application from Cloudflare R2."
                 }
               }
             ]

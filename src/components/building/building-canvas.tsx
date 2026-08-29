@@ -3,7 +3,9 @@ import { Canvas, useThree } from "@react-three/fiber"
 import { Suspense, useEffect } from "react"
 import * as THREE from "three"
 
+import { SiteLandscape } from "@/components/building/site-landscape"
 import { TowerModel } from "@/components/building/tower-model"
+import type { ApartmentOwnership } from "@/data/ownership"
 import type { Tower } from "@/data/towers"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
@@ -14,13 +16,14 @@ type BuildingCanvasProps = {
   facadeView: FacadeView
   selectedId: string
   visibleIds: Set<string>
+  ownerships: ApartmentOwnership[]
   onSelect: (id: string) => void
 }
 
 const cameraPositions: Record<FacadeView, [number, number, number]> = {
-  front: [8.8, 6.4, 13.6],
-  east: [-14.6, 5.6, 7.8],
-  west: [14.6, 5.6, 7.8],
+  front: [10.8, 7.2, 17.2],
+  east: [-18.2, 6.5, 10.2],
+  west: [18.2, 6.5, 10.2],
 }
 
 function CameraPreset({ view }: { view: FacadeView }) {
@@ -35,7 +38,7 @@ function CameraPreset({ view }: { view: FacadeView }) {
   return null
 }
 
-export default function BuildingCanvas({ tower, facadeView, selectedId, visibleIds, onSelect }: BuildingCanvasProps) {
+export default function BuildingCanvas({ tower, facadeView, selectedId, visibleIds, ownerships, onSelect }: BuildingCanvasProps) {
   const reducedMotion = useReducedMotion()
 
   return (
@@ -55,15 +58,16 @@ export default function BuildingCanvas({ tower, facadeView, selectedId, visibleI
         <directionalLight castShadow color="#ffffff" intensity={3.1} position={[7, 11, 7]} shadow-bias={-0.0004} shadow-mapSize-height={1024} shadow-mapSize-width={1024} />
         <directionalLight color="#70d3f5" intensity={1.1} position={[-7, 4, -6]} />
 
-        <TowerModel key={tower.id} tower={tower} selectedId={selectedId} visibleIds={visibleIds} onSelect={onSelect} />
+        <TowerModel key={tower.id} tower={tower} selectedId={selectedId} visibleIds={visibleIds} ownerships={ownerships} onSelect={onSelect} />
+        <SiteLandscape reducedMotion={reducedMotion} />
 
         <mesh position={[0, -4.6, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
           <planeGeometry args={[30, 30]} />
-          <meshStandardMaterial color="#dbe8ed" metalness={0} roughness={0.92} />
+          <meshStandardMaterial color="#d8edf0" metalness={0} roughness={0.92} />
         </mesh>
-        <gridHelper args={[24, 24, "#8da9b7", "#c5d5dc"]} position={[0, -4.59, 0]} />
+        <gridHelper args={[24, 24, "#8cb8bb", "#c5dcda"]} position={[0, -4.59, 0]} />
 
-        <OrbitControls autoRotate={!reducedMotion} autoRotateSpeed={0.35} enableDamping enablePan={false} maxDistance={22} maxPolarAngle={Math.PI / 2.05} minDistance={11} minPolarAngle={Math.PI / 3.4} target={[0, -0.25, 0]} />
+        <OrbitControls autoRotate={!reducedMotion} autoRotateSpeed={0.35} enableDamping enablePan={false} maxDistance={27} maxPolarAngle={Math.PI / 2.05} minDistance={13} minPolarAngle={Math.PI / 3.4} target={[0, -0.25, 0]} />
       </Suspense>
     </Canvas>
   )

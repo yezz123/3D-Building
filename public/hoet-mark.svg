@@ -1,0 +1,29 @@
+<svg width="200" height="64" viewBox="0 0 200 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gold decorative line top -->
+  <line x1="50" y1="4" x2="150" y2="4" stroke="url(#goldLine)" stroke-width="0.75" stroke-linecap="round"/>
+
+  <!-- HOET main text -->
+  <text x="100" y="36" text-anchor="middle" font-family="'Cinzel', 'Georgia', serif" font-weight="700" font-size="36" letter-spacing="12" fill="url(#goldGradient)">HOET</text>
+
+  <!-- Gold decorative line bottom -->
+  <line x1="50" y1="46" x2="150" y2="46" stroke="url(#goldLine)" stroke-width="0.75" stroke-linecap="round"/>
+
+  <!-- Morocco 2026 subtitle -->
+  <text x="100" y="59" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="400" font-size="9" letter-spacing="5" fill="#c8c2b8">MOROCCO 2026</text>
+
+  <defs>
+    <linearGradient id="goldGradient" x1="40" y1="16" x2="160" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9a84c"/>
+      <stop offset="0.35" stop-color="#e8d48b"/>
+      <stop offset="0.65" stop-color="#c9a84c"/>
+      <stop offset="1" stop-color="#a68a3a"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="50" y1="0" x2="150" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9a84c" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#c9a84c" stop-opacity="0.6"/>
+      <stop offset="0.5" stop-color="#e8d48b" stop-opacity="0.8"/>
+      <stop offset="0.7" stop-color="#c9a84c" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

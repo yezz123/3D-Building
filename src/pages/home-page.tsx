@@ -1,11 +1,12 @@
 import { lazy, Suspense } from "react"
-import { ArrowDownIcon, ArrowUpRightIcon, Layers3Icon, RadioTowerIcon, SunMediumIcon } from "lucide-react"
+import { ArrowDownIcon, ArrowUpRightIcon, CloudUploadIcon, Layers3Icon, PawPrintIcon, RadioTowerIcon, SunMediumIcon, TreesIcon } from "lucide-react"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { BorderBeam } from "@/components/ui/border-beam"
 import { usePageMetadata } from "@/hooks/use-page-metadata"
 
 const BuildingExperience = lazy(() => import("@/components/building/building-experience"))
@@ -32,7 +33,7 @@ export function HomePage() {
   usePageMetadata({
     title: "Syndiqo Towers | Interactive 3D Apartment Marketplace",
     description:
-      "Explore four Syndiqo towers in interactive 3D. Compare apartment prices, three designed façades, floor plans, views, and illustrative bid activity.",
+      "Explore four colorful Syndiqo towers in interactive 3D, walk through their gardens, compare 48 apartments, and claim a branded digital residence after checkout.",
   })
 
   return (
@@ -45,7 +46,7 @@ export function HomePage() {
             <span className="pulse-dot" />
             <span>Four towers · one interactive market</span>
             <span className="hero__status-rule" />
-            <span>48 apartments modeled</span>
+            <span>48 apartments · two showcase owners</span>
           </div>
 
           <h1 id="hero-title">
@@ -82,8 +83,39 @@ export function HomePage() {
             </div>
             <div>
               <span>03</span>
-              <p>Price and bid context in MAD</p>
+              <p>Claim a branded digital residence</p>
             </div>
+          </div>
+        </section>
+
+        <section className="ownership-section" id="ownership" aria-labelledby="ownership-title">
+          <div className="ownership-section__intro">
+            <p className="eyebrow">The inhabited model</p>
+            <h2 id="ownership-title">A greener block. A name behind every lit home.</h2>
+            <p>
+              Walk through planted gardens, paths, people, and a four-legged resident. Then open an apartment to see who has made it their digital address.
+            </p>
+          </div>
+
+          <div className="ownership-showcase">
+            <a href="https://syndiqo.ma" rel="noreferrer" target="_blank">
+              <img alt="Syndiqo logo" src="/syndiqo-mark.svg" />
+              <span><small>Atlas Court · 4B</small><strong>Syndiqo</strong></span>
+              <ArrowUpRightIcon aria-hidden="true" />
+              <BorderBeam colorFrom="#03aded" colorTo="#70d3f5" duration={8} size={110} />
+            </a>
+            <a href="https://hoet.ma" rel="noreferrer" target="_blank">
+              <img alt="HOET Technologies logo" src="/hoet-mark.svg" />
+              <span><small>Marina Fold · 5A</small><strong>HOET Technologies</strong></span>
+              <ArrowUpRightIcon aria-hidden="true" />
+              <BorderBeam colorFrom="#ff785a" colorTo="#ffd166" duration={9} size={110} />
+            </a>
+          </div>
+
+          <div className="ownership-features">
+            <article><TreesIcon aria-hidden="true" /><h3>Garden life</h3><p>Layered lawns, trees, benches, and walking paths give every model a lived-in ground plane.</p></article>
+            <article><PawPrintIcon aria-hidden="true" /><h3>People + pets</h3><p>Colorful residents and a gently animated dog walk make the block feel active without slowing the scene.</p></article>
+            <article><CloudUploadIcon aria-hidden="true" /><h3>Your logo, private by default</h3><p>Successful buyers can upload one logo to a private Cloudflare R2 bucket and claim an open residence.</p></article>
           </div>
         </section>
 
@@ -153,7 +185,7 @@ export function HomePage() {
           <div>
             <p>
               The digital buyer pack turns the selected-apartment experience into a portable comparison:
-              illustrative floor plans, finish notes, and tower information in one secure checkout.
+              illustrative floor plans, finish notes, tower information, and one verified branded-apartment claim in a secure checkout.
             </p>
             <a href="#explore">Choose a residence first <ArrowUpRightIcon aria-hidden="true" /></a>
           </div>
@@ -190,7 +222,14 @@ export function HomePage() {
               <AccordionTrigger>What is included in the digital buyer pack?</AccordionTrigger>
               <AccordionContent>
                 The one-time digital buyer pack includes illustrative apartment floor plans, finish notes,
-                and project information. Buying the pack does not sell or reserve real property.
+                project information, and one digital apartment brand claim. Buying the pack does not sell or reserve real property.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="claim">
+              <AccordionTrigger>How does an apartment brand claim work?</AccordionTrigger>
+              <AccordionContent>
+                After Polar confirms a successful checkout, choose one unclaimed demo residence, add your organization name and website,
+                and upload a PNG, JPG, or WebP logo. The private R2 asset is shown through a safe app URL in the 3D explorer.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="polar">

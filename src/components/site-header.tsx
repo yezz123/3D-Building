@@ -16,6 +16,7 @@ export function SiteHeader() {
       <nav aria-label="Main navigation">
         <a href="#explore">Towers</a>
         <a href="#bids">Bid terminal</a>
+        <a href="#ownership">Owners</a>
         <a href="#architecture">Architecture</a>
         <a href="#faq">FAQ</a>
       </nav>

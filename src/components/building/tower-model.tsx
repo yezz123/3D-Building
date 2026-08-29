@@ -1,8 +1,9 @@
-import { Instance, Instances } from "@react-three/drei"
+import { Html, Instance, Instances } from "@react-three/drei"
 import type { ThreeEvent } from "@react-three/fiber"
-import { useMemo, useState } from "react"
+import { useMemo, useState, type CSSProperties } from "react"
 import * as THREE from "three"
 
+import type { ApartmentOwnership } from "@/data/ownership"
 import type { Residence } from "@/data/residences"
 import type { Tower } from "@/data/towers"
 
@@ -10,16 +11,18 @@ type TowerModelProps = {
   tower: Tower
   selectedId: string
   visibleIds: Set<string>
+  ownerships: ApartmentOwnership[]
   onSelect: (id: string) => void
 }
 
 const floorHeights = [-3.05, -1.84, -0.63, 0.58, 1.79, 3]
 
-function UnitBay({ residence, selected, visible, tower, onSelect }: {
+function UnitBay({ residence, selected, visible, tower, ownership, onSelect }: {
   residence: Residence
   selected: boolean
   visible: boolean
   tower: Tower
+  ownership?: ApartmentOwnership
   onSelect: (id: string) => void
 }) {
   const [hovered, setHovered] = useState(false)
@@ -74,6 +77,22 @@ function UnitBay({ residence, selected, visible, tower, onSelect }: {
         <boxGeometry args={[2.5, 0.055, 0.055]} />
         <meshStandardMaterial color="#edf4f7" metalness={0.5} roughness={0.35} />
       </mesh>
+
+      {ownership ? (
+        <Html center distanceFactor={12} position={[0, .08, 2.91]}>
+          <a
+            className="tower-owner-plaque"
+            href={ownership.website}
+            onClick={(event) => event.stopPropagation()}
+            rel="noreferrer"
+            style={{ "--owner-color": ownership.brandColor } as CSSProperties}
+            target="_blank"
+          >
+            <img alt="" src={ownership.logoUrl} />
+            <span>{ownership.ownerName}</span>
+          </a>
+        </Html>
+      ) : null}
     </group>
   )
 }
@@ -225,12 +244,17 @@ function Structure({ tower }: { tower: Tower }) {
   )
 }
 
-export function TowerModel({ tower, selectedId, visibleIds, onSelect }: TowerModelProps) {
+export function TowerModel({ tower, selectedId, visibleIds, ownerships, onSelect }: TowerModelProps) {
+  const ownersByUnit = useMemo(
+    () => new Map(ownerships.filter((owner) => owner.towerId === tower.id).map((owner) => [owner.unit, owner])),
+    [ownerships, tower.id],
+  )
+
   return (
     <group rotation={[0, -0.18, 0]} dispose={null}>
       <Structure tower={tower} />
       {tower.residences.map((residence) => (
-        <UnitBay key={residence.id} residence={residence} selected={residence.id === selectedId} visible={visibleIds.has(residence.id)} tower={tower} onSelect={onSelect} />
+        <UnitBay key={residence.id} residence={residence} selected={residence.id === selectedId} visible={visibleIds.has(residence.id)} tower={tower} ownership={ownersByUnit.get(residence.unit)} onSelect={onSelect} />
       ))}
     </group>
   )
