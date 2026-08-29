@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfbf7"/>
+      <stop offset="1" stop-color="#dcecf3"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf7fb"/>
+      <stop offset="1" stop-color="#75b9d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <path d="M0 488 1200 380v250H0Z" fill="#10223f"/>
+  <g opacity=".12" stroke="#10223f">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200"/>
+    <path d="M90 0v480M180 0v480M270 0v480M360 0v480M450 0v480M540 0v480M630 0v480M720 0v480M810 0v480M900 0v480M990 0v480M1080 0v480"/>
+  </g>
+  <g transform="translate(762 50)">
+    <path d="m56 64 190-38 96 62-187 42Z" fill="#ffffff" stroke="#10223f" stroke-width="4"/>
+    <path d="m56 64 99 66v382L56 442Z" fill="#cbd8df" stroke="#10223f" stroke-width="4"/>
+    <path d="m155 130 187-42v371l-187 53Z" fill="url(#glass)" stroke="#10223f" stroke-width="4"/>
+    <g fill="none" stroke="#10223f" stroke-width="4">
+      <path d="M57 126 155 194l187-45M57 188l98 70 187-48M57 250l98 72 187-50M57 313l98 73 187-52M57 377l98 74 187-54"/>
+      <path d="M207 118v380M263 105v378"/>
+    </g>
+    <g fill="#03aded">
+      <path d="m155 194 187-45v19l-187 47Z"/>
+      <path d="m155 322 187-50v19l-187 52Z"/>
+      <path d="m155 451 187-54v19l-187 56Z"/>
+    </g>
+  </g>
+  <g fill="#10223f" font-family="Arial, Helvetica, sans-serif">
+    <image href="syndiqo-mark.svg" x="72" y="54" width="42" height="42"/>
+    <text x="130" y="88" font-size="25" font-weight="700" letter-spacing="4">SYNDIQO / TOWER</text>
+    <text x="72" y="225" font-size="76" font-weight="600" letter-spacing="-5">Explore every</text>
+    <text x="72" y="302" font-size="76" font-weight="600" letter-spacing="-5" fill="#03aded">apartment in 3D.</text>
+    <text x="72" y="367" font-size="25" fill="#607086">Interactive floor plans · views · availability</text>
+  </g>
+  <text x="72" y="570" fill="#ffffff" font-family="monospace" font-size="19" letter-spacing="2">TOWER.SYNDIQO.MA</text>
+</svg>

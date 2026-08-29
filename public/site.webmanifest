@@ -1,0 +1,16 @@
+{
+  "name": "Syndiqo Tower — Interactive 3D Apartment Explorer",
+  "short_name": "Syndiqo Tower",
+  "description": "Explore apartment floor plans, views and availability on a real-time 3D residential tower.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fcfbf7",
+  "theme_color": "#03aded",
+  "icons": [
+    {
+      "src": "/brand-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
