@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#fcfbf7"/>
-  <image href="syndiqo-mark.svg" x="86" y="86" width="340" height="340"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" fill="#fcfbf7" rx="96"/><image width="340" height="340" x="86" y="86" href="syndiqo-mark.svg"/></svg>
