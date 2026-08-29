@@ -1,79 +1,71 @@
 import { lazy, Suspense } from "react"
-import { ArrowDownIcon, ArrowUpRightIcon, BoxIcon, Layers3Icon, SunMediumIcon } from "lucide-react"
+import { ArrowDownIcon, ArrowUpRightIcon, Layers3Icon, RadioTowerIcon, SunMediumIcon } from "lucide-react"
 
+import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import { usePageMetadata } from "@/hooks/use-page-metadata"
-import { siteConfig } from "@/lib/site"
 
 const BuildingExperience = lazy(() => import("@/components/building/building-experience"))
 
 const processSteps = [
   {
     number: "01",
-    title: "Turn the tower",
-    copy: "Drag the model to read orientation, height, terraces, and outlook as one connected decision.",
+    title: "Choose a tower",
+    copy: "Compare four price bands, districts, and architectural ideas before entering the building.",
   },
   {
     number: "02",
-    title: "Compare the homes",
-    copy: "Filter by bedroom count, then tap any lit residence for its plan, area, exposure, and release status.",
+    title: "Read all three sides",
+    copy: "Jump between each named façade, orbit the model, then inspect any lit apartment in context.",
   },
   {
     number: "03",
-    title: "Take the plans away",
-    copy: "Use secure Polar checkout to purchase the $29 digital buyer pack without selling or reserving real property.",
+    title: "Watch the market",
+    copy: "Review illustrative bid activity, return to a unit in 3D, and take the plans away in the buyer pack.",
   },
 ]
 
 export function HomePage() {
   usePageMetadata({
-    title: "Syndiqo Tower | Interactive 3D Apartment Explorer",
+    title: "Syndiqo Towers | Interactive 3D Apartment Marketplace",
     description:
-      "Explore Syndiqo Tower in interactive 3D. Compare 12 apartment floor plans by level, bedrooms, orientation, area, skyline view and availability.",
+      "Explore four Syndiqo towers in interactive 3D. Compare apartment prices, three designed façades, floor plans, views, and illustrative bid activity.",
   })
 
   return (
     <div id="top">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero__status">
             <span className="pulse-dot" />
-            <span>Phase 01 · interactive residence release</span>
+            <span>Four towers · one interactive market</span>
             <span className="hero__status-rule" />
-            <span>12 homes modeled</span>
+            <span>48 apartments modeled</span>
           </div>
 
           <h1 id="hero-title">
-            Explore every apartment
-            <br />
-            <em>inside a 3D tower.</em>
+            <span>Compare four towers</span>
+            <em>from every angle.</em>
           </h1>
           <p className="hero__lede">
-            Orbit Syndiqo Tower in real time. Compare every released apartment by height,
-            orientation, floor plan, and light—without flattening the building into a list.
+            Compare architecture, residences, prices, and illustrative bid activity in one real-time 3D decision space.
           </p>
 
           <div className="hero__actions">
             <Button asChild size="lg">
               <a href="#explore">
-                Explore the tower
+                Enter the tower market
                 <ArrowDownIcon data-icon="inline-end" />
               </a>
             </Button>
             <Button asChild size="lg" variant="ghost">
-              <a href="#architecture">
-                Read the brief
-                <ArrowUpRightIcon data-icon="inline-end" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href={siteConfig.syndiqoUrl} rel="noreferrer" target="_blank">
-                Visit Syndiqo.ma
+              <a href="#bids">
+                View the bid terminal
                 <ArrowUpRightIcon data-icon="inline-end" />
               </a>
             </Button>
@@ -82,39 +74,36 @@ export function HomePage() {
           <div className="hero__index" aria-label="Project highlights">
             <div>
               <span>01</span>
-              <p>Six residential levels</p>
+              <p>Four distinct tower designs</p>
             </div>
             <div>
               <span>02</span>
-              <p>Three plan families</p>
+              <p>Three named façades each</p>
             </div>
             <div>
               <span>03</span>
-              <p>One full 3D decision</p>
+              <p>Price and bid context in MAD</p>
             </div>
           </div>
         </section>
 
-        <section className="explore-section" id="explore" aria-labelledby="residences">
-          <div className="section-kicker" id="residences">
-            <p>Residences / 02–07</p>
-            <Badge variant="outline">WebGL · live model</Badge>
+        <section className="explore-section" id="explore" aria-labelledby="towers-title">
+          <div className="section-kicker" id="towers-title">
+            <p>Towers / Casablanca + Rabat</p>
+            <Badge variant="outline">WebGL · four live models</Badge>
           </div>
           <Suspense fallback={<div className="experience-loading">Preparing the residence model…</div>}>
             <BuildingExperience />
           </Suspense>
-          <p className="illustrative-note">
-            Residence specifications, availability, views, and pricing are illustrative product-demo data.
-          </p>
         </section>
 
         <section className="architecture-section" id="architecture" aria-labelledby="architecture-title">
           <div className="architecture-section__intro">
-            <p className="eyebrow">Architecture / read the volume</p>
-            <h2 id="architecture-title">A quieter tower with more sky in it.</h2>
+            <p className="eyebrow">Architecture / four points of view</p>
+            <h2 id="architecture-title">Four silhouettes. Twelve designed faces.</h2>
             <p>
-              Syndiqo Tower is imagined as a six-level residential stack: deep terraces temper the sun,
-              two homes share each floor, and every corner earns a second direction of light.
+              Each tower answers a different setting with its own massing, material palette, price band,
+              and three legible façades. The demo keeps every decision connected to the apartment plan.
             </p>
           </div>
 
@@ -122,20 +111,20 @@ export function HomePage() {
             <article>
               <SunMediumIcon aria-hidden="true" />
               <span>01</span>
-              <h3>Light, mapped</h3>
-              <p>Orientation lives beside every plan, so “bright” becomes a direction and a time of day.</p>
+              <h3>Three real sides</h3>
+              <p>Front, east, and west views are named for each tower and available as direct camera presets.</p>
             </article>
             <article>
               <Layers3Icon aria-hidden="true" />
               <span>02</span>
-              <h3>Two per floor</h3>
-              <p>A simple A/B stack keeps the building legible while allowing each home a full facade bay.</p>
+              <h3>Four price bands</h3>
+              <p>Starting prices and apartment values move with the selected tower, shown in Moroccan dirhams.</p>
             </article>
             <article>
-              <BoxIcon aria-hidden="true" />
+              <RadioTowerIcon aria-hidden="true" />
               <span>03</span>
-              <h3>Plans in context</h3>
-              <p>Area, plan, balcony, and skyline are read together instead of across disconnected PDFs.</p>
+              <h3>Market context</h3>
+              <p>Illustrative bids connect back to apartments without pretending to submit a real property order.</p>
             </article>
           </div>
         </section>
@@ -143,7 +132,7 @@ export function HomePage() {
         <section className="process-section" id="process" aria-labelledby="process-title">
           <div className="process-section__heading">
             <p className="eyebrow">How it works</p>
-            <h2 id="process-title">From facade to floor plan in three moves.</h2>
+            <h2 id="process-title">From skyline to unit in three moves.</h2>
           </div>
           <div className="process-list">
             {processSteps.map((step) => (
@@ -159,12 +148,12 @@ export function HomePage() {
         <section className="buyer-pack-section" aria-labelledby="buyer-pack-title">
           <div>
             <p className="eyebrow">Digital buyer pack / $29 once</p>
-            <h2 id="buyer-pack-title">Take the decision offline.</h2>
+            <h2 id="buyer-pack-title">Keep the comparison with you.</h2>
           </div>
           <div>
             <p>
-              The digital buyer pack turns the selected-home experience into a portable decision:
-              illustrative floor plans, finish notes, and project information in one secure checkout.
+              The digital buyer pack turns the selected-apartment experience into a portable comparison:
+              illustrative floor plans, finish notes, and tower information in one secure checkout.
             </p>
             <a href="#explore">Choose a residence first <ArrowUpRightIcon aria-hidden="true" /></a>
           </div>
@@ -177,17 +166,24 @@ export function HomePage() {
           </div>
           <Accordion collapsible type="single">
             <AccordionItem value="demo">
-              <AccordionTrigger>Is Syndiqo Tower a real property launch?</AccordionTrigger>
+              <AccordionTrigger>Are these real property launches?</AccordionTrigger>
               <AccordionContent>
-                No. Syndiqo Tower, its residences, availability, and pricing are illustrative demo content
-                created to show a complete 3D real-estate commerce experience.
+                No. The towers, residences, availability, property pricing, and bid activity are illustrative
+                demo content created to show a complete 3D real-estate discovery experience.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="three">
               <AccordionTrigger>How does the 3D apartment explorer work?</AccordionTrigger>
               <AccordionContent>
-                The building is procedural geometry rendered in real time with Three.js and React Three
-                Fiber. Orbit the tower, filter by bedroom count, and inspect each apartment floor plan.
+                Each building is procedural geometry rendered in real time with Three.js and React Three
+                Fiber. Choose a tower, open any of its three façades, orbit it, and inspect apartment plans.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="bids">
+              <AccordionTrigger>Does the bid terminal place a real bid?</AccordionTrigger>
+              <AccordionContent>
+                No. The terminal is a read-only product demonstration. Every amount, status, session move,
+                and market signal is illustrative, and no property order is submitted.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="pack">
@@ -207,19 +203,7 @@ export function HomePage() {
           </Accordion>
         </section>
       </main>
-
-      <footer className="site-footer">
-        <div className="site-footer__brand">
-          <p>Syndiqo Tower</p>
-          <h2>See the whole decision.</h2>
-        </div>
-        <Separator />
-        <div className="site-footer__bottom">
-          <a href={siteConfig.syndiqoUrl} rel="noreferrer" target="_blank">A Syndiqo experience ↗</a>
-          <span>Vite · TanStack · shadcn/ui · Three.js · Polar</span>
-          <a href="#top">Back to top ↑</a>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

@@ -5,7 +5,7 @@ export function FloorPlan({ residence }: { residence: Residence }) {
 
   return (
     <svg
-      aria-label={`Diagram of ${residence.plan}, residence ${residence.id}`}
+      aria-label={`Diagram of ${residence.plan}, residence ${residence.unit}`}
       className="floor-plan"
       role="img"
       viewBox="0 0 260 176"

@@ -1,7 +1,7 @@
 {
-  "name": "Syndiqo Tower — Interactive 3D Apartment Explorer",
-  "short_name": "Syndiqo Tower",
-  "description": "Explore apartment floor plans, views and availability on a real-time 3D residential tower.",
+  "name": "Syndiqo Towers: Interactive 3D Apartment Marketplace",
+  "short_name": "Syndiqo Towers",
+  "description": "Explore four real-time 3D towers with apartment prices, floor plans, three façades, and illustrative bid activity.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fcfbf7",

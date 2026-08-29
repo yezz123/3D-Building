@@ -12,7 +12,7 @@
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta
       name="keywords"
-      content="3D apartment building, interactive apartment explorer, apartment floor plans, property visualization, real estate 3D, residential tower, apartment availability, Syndiqo Morocco"
+      content="3D apartment buildings Morocco, interactive apartment marketplace, Casablanca apartments, Rabat apartments, apartment floor plans, property visualization, real estate 3D, residential towers, apartment prices MAD, property bid terminal, Syndiqo Morocco"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/brand-icon-512.png" />
@@ -20,26 +20,26 @@
     <link rel="canonical" href="https://tower.syndiqo.ma/" />
     <meta
       name="description"
-      content="Explore Syndiqo Tower in interactive 3D. Compare 12 apartment floor plans by level, bedrooms, orientation, area, skyline view and availability."
+      content="Explore four Syndiqo towers in interactive 3D. Compare apartment prices, three designed façades, floor plans, views, and illustrative bid activity."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Syndiqo Tower" />
     <meta property="og:locale" content="en_MA" />
     <meta property="og:url" content="https://tower.syndiqo.ma/" />
-    <meta property="og:title" content="Syndiqo Tower | Interactive 3D Apartment Explorer" />
+    <meta property="og:title" content="Syndiqo Towers | Interactive 3D Apartment Marketplace" />
     <meta
       property="og:description"
-      content="Orbit a residential tower in real time and compare 12 illustrative apartments by floor plan, view, size and availability."
+      content="Choose four residential towers, inspect three façades each, and compare illustrative apartment prices, plans, views, and bid activity."
     />
     <meta property="og:image" content="https://tower.syndiqo.ma/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Syndiqo Tower interactive 3D apartment building explorer" />
+    <meta property="og:image:alt" content="Syndiqo interactive 3D apartment tower marketplace" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Syndiqo Tower | Interactive 3D Apartment Explorer" />
+    <meta name="twitter:title" content="Syndiqo Towers | Interactive 3D Apartment Marketplace" />
     <meta
       name="twitter:description"
-      content="Explore apartment floor plans, views and availability on an interactive real-time 3D tower."
+      content="Explore four interactive 3D towers with apartment prices, floor plans, three façades, and illustrative bids."
     />
     <meta name="twitter:image" content="https://tower.syndiqo.ma/og-image.png" />
     <script type="application/ld+json">
@@ -63,7 +63,7 @@
             "@id": "https://tower.syndiqo.ma/#website",
             "url": "https://tower.syndiqo.ma/",
             "name": "Syndiqo Tower",
-            "alternateName": "Syndiqo 3D Apartment Explorer",
+            "alternateName": "Syndiqo 3D Apartment Marketplace",
             "publisher": { "@id": "https://syndiqo.ma/#organization" },
             "inLanguage": "en"
           },
@@ -71,8 +71,8 @@
             "@type": ["WebPage", "CollectionPage"],
             "@id": "https://tower.syndiqo.ma/#webpage",
             "url": "https://tower.syndiqo.ma/",
-            "name": "Interactive 3D Apartment Building Explorer | Syndiqo Tower",
-            "description": "An interactive 3D residential tower with 12 illustrative apartment floor plans, views, sizes and release statuses.",
+            "name": "Interactive 3D Apartment Tower Marketplace | Syndiqo",
+            "description": "An interactive marketplace with four procedural 3D residential towers, three designed façades each, apartment floor plans, prices and illustrative bid activity.",
             "isPartOf": { "@id": "https://tower.syndiqo.ma/#website" },
             "about": { "@id": "https://tower.syndiqo.ma/#experience" },
             "primaryImageOfPage": { "@id": "https://tower.syndiqo.ma/#primaryimage" },
@@ -84,17 +84,29 @@
             "url": "https://tower.syndiqo.ma/og-image.png",
             "width": 1200,
             "height": 630,
-            "caption": "Syndiqo Tower interactive 3D apartment building explorer"
+            "caption": "Syndiqo interactive 3D apartment tower marketplace"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://tower.syndiqo.ma/#tower-catalogue",
+            "name": "Syndiqo 3D tower catalogue",
+            "numberOfItems": 4,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "item": { "@type": "ApartmentComplex", "name": "Atlas Court", "description": "Illustrative terraced residential tower in Casa Anfa, Casablanca." } },
+              { "@type": "ListItem", "position": 2, "item": { "@type": "ApartmentComplex", "name": "Marina Fold", "description": "Illustrative split-volume residential tower in Ain Diab, Casablanca." } },
+              { "@type": "ListItem", "position": 3, "item": { "@type": "ApartmentComplex", "name": "Cedar Terraces", "description": "Illustrative framed residential tower in Bouskoura, Casablanca." } },
+              { "@type": "ListItem", "position": 4, "item": { "@type": "ApartmentComplex", "name": "Horizon Three", "description": "Illustrative crowned residential tower in Agdal, Rabat." } }
+            ]
           },
           {
             "@type": "WebApplication",
             "@id": "https://tower.syndiqo.ma/#experience",
-            "name": "Syndiqo Tower 3D Apartment Explorer",
+            "name": "Syndiqo Towers 3D Apartment Marketplace",
             "url": "https://tower.syndiqo.ma/#explore",
             "applicationCategory": "MultimediaApplication",
             "operatingSystem": "Any modern web browser",
             "browserRequirements": "JavaScript and WebGL support",
-            "description": "A real-time Three.js apartment building explorer for comparing floor plans, views, areas and availability.",
+            "description": "A real-time Three.js tower marketplace for comparing architecture, façades, apartment plans, prices, views and illustrative bid activity.",
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -105,8 +117,8 @@
           {
             "@type": "Product",
             "@id": "https://tower.syndiqo.ma/#buyer-pack",
-            "name": "Syndiqo Tower Buyer Pack",
-            "description": "A digital buyer pack with illustrative floor plans, finish notes and project information for the Syndiqo Tower 3D experience.",
+            "name": "Syndiqo Towers Buyer Pack",
+            "description": "A digital buyer pack with illustrative floor plans, finish notes and project information for the Syndiqo 3D tower experience.",
             "image": "https://tower.syndiqo.ma/og-image.png",
             "brand": { "@id": "https://syndiqo.ma/#organization" },
             "category": "Digital property buyer pack",
@@ -124,10 +136,10 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Is Syndiqo Tower a real property launch?",
+                "name": "Are the Syndiqo towers real property launches?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. Syndiqo Tower and its residences, availability and property pricing are illustrative content created to demonstrate an interactive 3D real-estate experience."
+                  "text": "No. The towers, residences, availability, property pricing and bid activity are illustrative content created to demonstrate an interactive 3D real-estate experience."
                 }
               },
               {
@@ -135,7 +147,15 @@
                 "name": "How does the 3D apartment explorer work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The building is procedural geometry rendered in real time with Three.js and React Three Fiber. Visitors can orbit the tower, filter apartments by bedroom count and inspect each floor plan."
+                  "text": "Each building is procedural geometry rendered in real time with Three.js and React Three Fiber. Visitors can choose among four towers, inspect three façades, filter apartments and compare floor plans."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the Syndiqo bid terminal submit a real property bid?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The bid terminal is a read-only product demonstration. Its amounts, statuses and market signals are illustrative, and no property order is submitted."
                 }
               },
               {
@@ -151,7 +171,7 @@
         ]
       }
     </script>
-    <title>Syndiqo Tower | Interactive 3D Apartment Explorer</title>
+    <title>Syndiqo Towers | Interactive 3D Apartment Marketplace</title>
   </head>
   <body>
     <div id="root"></div>

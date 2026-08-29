@@ -1,6 +1,6 @@
-# Syndiqo Tower
+# Syndiqo Towers
 
-Syndiqo Tower is an interactive 3D apartment-building experience published by Syndiqo. It lets visitors orbit a procedural WebGL tower and compare 12 illustrative residences by floor, bedrooms, area, orientation, view, floor plan, and release status.
+Syndiqo Towers is an interactive 3D apartment marketplace published by Syndiqo. It lets visitors switch among four procedural WebGL towers, inspect three façades on each building, and compare 48 illustrative residences by price, floor, bedrooms, area, orientation, view, floor plan, and release status.
 
 ## Canonical URLs
 
@@ -9,7 +9,9 @@ Syndiqo Tower is an interactive 3D apartment-building experience published by Sy
 
 ## Important facts
 
-- The apartment building, availability, and property prices are illustrative demo content.
-- The real-time model is rendered with Three.js and React Three Fiber; it is not a video.
+- The towers, apartments, availability, property prices, and bid activity are illustrative demo content.
+- The real-time models are rendered with Three.js and React Three Fiber; they are not videos.
+- Apartment prices are displayed in Moroccan dirhams and change with the selected tower.
+- The read-only bid terminal never submits a property order.
 - A separate $29 digital buyer pack is sold through a secure Polar checkout.
 - Buying the digital pack does not sell or reserve real property.

@@ -14,15 +14,15 @@ export function SiteHeader() {
       </a>
 
       <nav aria-label="Main navigation">
-        <a href="#residences">Residences</a>
+        <a href="#explore">Towers</a>
+        <a href="#bids">Bid terminal</a>
         <a href="#architecture">Architecture</a>
-        <a href="#process">How it works</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <Button asChild size="sm">
         <a href="#explore">
-          Choose a home
+          Choose a tower
           <ArrowDownRightIcon data-icon="inline-end" />
         </a>
       </Button>
