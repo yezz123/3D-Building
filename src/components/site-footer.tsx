@@ -122,7 +122,7 @@ export function SiteFooter() {
 
         <div className="site-footer__bottom">
           <span>© 2026 HOET Technologies SARL</span>
-          <span>Vite · TanStack · shadcn/ui · Three.js · Polar</span>
+          <span>A name behind every lit home.</span>
           <a href="#top">Back to top ↑</a>
         </div>
       </div>
